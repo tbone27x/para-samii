@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    background:radial-gradient(circle,#1a1a1a,#000);
+    color:#fff;
+    overflow:hidden;
+}
+
+/* SECCIONES */
+.section{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.section.active{
+    display:flex;
+    animation:fade 1s ease;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:scale(.95)}
+    to{opacity:1;transform:scale(1)}
+}
+
+.card{
+    background:rgba(0,0,0,.85);
+    max-width:700px;
+    width:100%;
+    padding:35px;
+    border-radius:25px;
+    border:2px solid #e63946;
+    box-shadow:0 0 40px rgba(230,57,70,.4);
+}
+
+h1,h2{
+    font-family:'Playfair Display',serif;
+    color:#e63946;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+p{
+    color:#eee;
+    line-height:1.6;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+button{
+    display:block;
+    margin:25px auto 0;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#e63946;
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#ff4d5a;
+    transform:scale(1.05);
+}
+
+/* BOTÓN FLOTANTE */
+.floating{
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    background:#e63946;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:30px;
+    font-size:14px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(230,57,70,.6);
+    animation:pulse 1.5s infinite;
+    z-index:10;
+    display:none;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.1)}
+}
+
+/* CORAZONES */
+.heart{
+    position:fixed;
+    bottom:-10px;
+    color:white; /* TODOS LOS CORAZONES BLANCOS */
+    font-size:20px;
+    animation:float 8s linear infinite;
+    opacity:.7;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);opacity:0}
+    50%{opacity:1}
+    100%{transform:translateY(-120vh);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<!-- 🎵 AUDIOS -->
+<audio id="music1" preload="auto">
+    <source src="https://files.catbox.moe/a44j7m.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="music2" loop preload="auto">
+    <source src="https://files.catbox.moe/21mus2.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SECCIÓN 1 -->
+<div class="section active" id="sec1">
+    <div class="card">
+        <h1>PARA LA MUJER CON LOS OJOS MAS BONITOS DEL PLANETA TIERRA </h1>
+        <p>
+            No es mucho lo seee, pero está hecho con el corazon.
+            Algo que quería darte para que lo guardes
+            y lo sientas cuando quieras.
+        </p>
+        <button onclick="startExperience()">Siguiente 🤍</button>
+    </div>
+</div>
+
+<!-- SECCIÓN 2 -->
+<div class="section" id="sec2">
+    <div class="card">
+        <h2>PARA MI MUJERRRR 🤍</h2>
+        <p>
+          Amarte es una de las cosas más verdaderas que me han pasado en la vida...
+          No fue algo repentino, fue algo que creció despacio,
+          como crecen las cosas que están destinadas a quedarse.
+          Te metiste en mis pensamientos, en mis días, en mis planes,
+          y sin pedirme permiso, también en mi corazón..
+        </p>
+        <p>
+            SI SUPIERAS LAS VECES QUE TE PIENSO AL DIAAA.
+        </p>
+        <button onclick="next('sec3')">Siguiente</button>
+    </div>
+</div>
+
+<!-- SECCIÓN 3 -->
+<div class="section" id="sec3">
+    <div class="card">
+        <h2>Y este poema es para ti,<br>
+         porque hay cosas que solo la poesía puede decir:🤍</h2>
+        <p>
+            Te amo en los días tranquilos<br>
+            y en los que todo tiembla,<br>
+            te amo cuando sonríes<br>
+            y cuando el alma te pesa.<br>
+
+            Te amo sin prisa,<br>
+            sin condiciones,<br>
+            con la certeza de quien sabe<br>
+            que el amor verdadero existe.<br>
+
+            Si me pierdo, que sea en tus ojos.<br>
+            Si me quedo, que sea contigo.<br>
+            Si amo, que seas tú.
+        </p>
+         <button onclick="next('sec4')">TE AMOOO</button>
+    </div>
+</div>
+
+<!-- SECCIÓN 4 -->
+<div class="section" id="sec4" style="overflow-y:auto; align-items:flex-start;">
+    <div class="card" style="max-width:900px;">
+        <h2>PARA TI 🤍</h2>
+        <p>
+          MI AMOOOOOOOORSOOOTEEE SOTEE SOTEEE,
+
+No sé en qué momento exacto pasó, pero un día desperté y me di cuenta de que mi mundo ya no giraba igual… giraba alrededor de ti. Alrededor de tu risa, de tu voz, de esa manera tan tuya de existir que sin pedir permiso se volvió mi lugar favorito.
+
+Quiero que sepas que amarte no fue una decisión, fue un destino. Fue algo que se fue formando despacio , en los pequeños momentos, en los días buenos y también en los difíciles. Porque incluso en los días grises, tú has sido la razón por la que mi corazón sigue creyendo.
+
+A veces me pregunto si sabes lo mucho que significas para mí. Si sabes que cuando sonríes, el mundo se vuelve un lugar más bonito. Que cuando me miras, todo mi sistema deja de funcionar mi corazon comienza a latir mil por horas y me das una paz inigualable. Cuando estas conmigo me siento como un niño en tus brazos.
+
+MI AmOOOR , solo quiero recordarte que eres la mujer de mi vida te has vuelto una pieza importante de mi rompecabezas, me has hecho tan adicto a ti que ya no puedo dormir sin antes conversar contigo . Te amo demasiadoo me has enseñado tantas cosas , y estoy agradecido por eso.
+
+Aunque aveces me digas que te ves de la cagada, si supieras como de mis ojos te vez, te sorpenderiaass, te ves tan hermosaaa , brillas como una estrella en una noche tan oscuraa pero mil veces mejor mas brillante y hermosa, con un brillo que mas nadie puede ver.
+
+Te has vuelto mi lugar seguro , me trasmites tanta tranquilidad , demasiadaaaa que cuando estoy contigo bajo todas mi defensas y solo soy un niño mimado por tus besos y abrazos que tanto me encantan y fasinan.
+
+Buenooo y no se si ya te lo he dicho pero me encantas tus ojos estoy tan enamorado de esa mirada tan perfecta que tienes amor mioo , siento que deberia ser un delito tener esos ojos son un peligro para la humanidad demasiado bellos.  
+
+Solo quiero que sepas que si me lo permites , quiero permanecer a tu lado se que no todo es para siempre , pero quiero que dure lo maaasss posible que se puedaa , no se si sea egoista de mi parte pero solo quiero que seas miaaa , que esos ojitos solo me miren a mi , y que tu amor sea soloo  miooo.
+ 
+Gracias por todos los bellos momentos de este año y espero que sigamos creando aun mas el año que vienee , TE AMOOOO MUCHOO
+
+ Con todo mi amor.<br>
+
+        </p>
+        <p>
+         <button onclick="next('final')">TU LUIS 🤍</button>
+    </div>
+</div>
+
+<!-- SECCIÓN FINAL -->
+<div class="section" id="final">
+    <div class="card" style="max-width:900px;">
+        <h1 style="
+            font-size:60px;
+            margin-bottom:30px;
+            color:#e63946;
+        ">
+            TE AMOO
+        </h1>
+
+        <p style="font-size:20px; line-height:1.8;">
+            Con todo mi corazón.<br>
+            HOYYY.<br>
+            MAÑANAA.<br>
+            Y SIEMPREEEE.
+        </p>
+
+        <p style="margin-top:25px; font-style:italic;">
+            Hasta que mi corazon deje de latir 🤍
+        </p>
+    </div>
+</div>
+
+<!-- TOP 10 COSAS QUE ME GUSTAN -->
+<div class="section" id="likes">
+    <div class="card">
+        <h2>TOP 10 COSAS QUE ME GUSTAN DE TIIII 🤍</h2>
+        <p>• Tus ojitos</p>
+        <p>• Tu sonrisa sin darte cuenta</p>
+        <p>• Tus ojitos</p>
+        <p>• Tu forma de amar</p>
+        <p>• La forma en que me miras</p>
+        <p>• Tus ojitos</p>
+        <p>• Cómo haces especial lo simple</p>
+        <p>• Tus ojitos</p>
+        <p>• Tus ojitos</p>
+        <p>• Tus ojitos</p>
+        <button onclick="back()">Volver</button>
+    </div>
+</div>
+
+<!-- BOTÓN FLOTANTE -->
+<div class="floating" id="floatBtn" onclick="openLikes()">
+    Haz click aquí 🤍
+</div>
+
+<script>
+let lastSection = "sec2";
+
+function startExperience(){
+    const m1 = document.getElementById("music1");
+    const m2 = document.getElementById("music2");
+
+    m1.play().catch(()=>{});
+    m1.onended = () => {
+        m2.play().catch(()=>{});
+    };
+
+    next("sec2");
+}
+
+function next(id){
+    document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+
+    if(id !== "sec1"){
+        document.getElementById("floatBtn").style.display = "block";
+        lastSection = id;
+    }
+}
+
+function openLikes(){
+    document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+    document.getElementById("likes").classList.add("active");
+}
+
+function back(){
+    next(lastSection);
+}
+
+// CORAZONES BLANCOS FLOTANTES
+for(let i=0;i<25;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="🤍"; // CORAZÓN BLANCO
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
